@@ -14,6 +14,8 @@ private:
 	Double_Vector x_values;
 	Double_Vector y_values;
 	bool FailureState = false;
+	Double_Vector kriterias;
+	double basicKriteria=-1;
 public:
 	Aproximation(bool construct = false);
 	void aproximate(AproximationModes mode);

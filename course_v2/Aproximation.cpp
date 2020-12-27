@@ -35,6 +35,7 @@ void Aproximation::aproximate(AproximationModes mode)
 				eqations[j][k]+=(AproximationFunctions[j].solveFor(x_values[i])) * AproximationFunctions[k].solveFor(x_values[i]);
 	}
 	Matrix norm(eqations, amount_of_functions);
+	norm.show();
 	Double_Vector Koefficients;
 	switch (mode)
 	{
@@ -109,8 +110,19 @@ void Aproximation::aproximate(AproximationModes mode)
 		else if (abs(y_value - y_values[i]) > max_Deviation) max_Deviation = abs(y_value - y_values[i]);
 		aproximation_koeficient += pow((y_value - y_values[i]),2);
 	}
-	std::cout << "Aproximation kriteria: " << aproximation_koeficient << std::endl;
+	std::cout << "Aproximation kriteria for this aproximation is: " << aproximation_koeficient << std::endl;
 	std::cout << "maximum deviation: " << max_Deviation << std::endl;
+	system("PAUSE");
+	system("CLS");
+	if (basicKriteria>=0)
+	{
+		kriterias.add(aproximation_koeficient);
+		std::cout << "koefficient with variant functions: " << basicKriteria << std::endl;
+
+		for (unsigned int i = 0; i < kriterias.getSize();i++)
+			std::cout << "new koefficients [" << i + 1 << "]: " << kriterias[i] <<"which is "<<((abs(basicKriteria)>abs(kriterias[i]))?("better"):("worse"))<< std::endl;
+	}
+	else basicKriteria = aproximation_koeficient;
 }
 
 Double_Vector Aproximation::SimpleIterrations(Double_Vector* koefficients, Double_Vector free_members)

@@ -14,7 +14,7 @@ class Function
 	
 private:
 	FunctionTypes type=FunctionTypes::UNDEFINED;
-	int constant=0;
+	double constant=0;
 public:
 	double solveFor(double arg);
 	Function(bool construct = true);

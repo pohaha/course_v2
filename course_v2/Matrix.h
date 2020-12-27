@@ -120,7 +120,7 @@ public:
 		for (unsigned int Counter = 0; Counter < columnNumber - 1; Counter++)
 		{
 			for (unsigned int rowCounter = Counter+1; rowCounter < rowNumber; rowCounter++)
-			{
+			{	
 				m = LU_Form[rowCounter][Counter] / LU_Form[Counter][Counter];
 				for (unsigned int columnCounter = Counter; columnCounter < columnNumber; columnCounter++)
 				{
