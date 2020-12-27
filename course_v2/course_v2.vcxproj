@@ -139,9 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Aproximation.cpp" />
+    <ClCompile Include="Function.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Aproximation.h" />
+    <ClInclude Include="Function.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>

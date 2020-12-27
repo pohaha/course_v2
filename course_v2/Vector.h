@@ -106,8 +106,7 @@ public:
 		length = two.length;
 		double* n_data = new double[length];
 		memcpy(n_data, two.data, sizeof(double) * length);
-		data = n_data;
-		
+		data = n_data;		
 	}
 
 	

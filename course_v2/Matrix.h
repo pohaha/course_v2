@@ -63,6 +63,7 @@ public:
 		for (unsigned int i = 0; i < rowNumber; i++)
 			Rows[i] = n_data[i];
 	}
+
 	//basic matrixes constructor
 	Matrix(BasicMatrixes type,unsigned int n_Rows, unsigned int n_Columns):rowNumber(n_Rows),columnNumber(n_Columns)
 	{
@@ -141,7 +142,7 @@ public:
 		return LU_Form;
 	}
 	//Solve for defined free members
-	Double_Vector solveFor( const Double_Vector& free_Member) const
+	Double_Vector solveFor(const Double_Vector& free_Member) const
 	{
 		Double_Vector Answers(rowNumber, 0.f);
 		Matrix LowerTriangle = LU_form(LU_type::Lower);
@@ -158,7 +159,6 @@ public:
 			Answers[i] = Answers[i] / UpperTriangle[i][i];
 		}
 		return Answers;
-
 	}
 
 	//matrix indexing operation
